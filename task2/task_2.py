@@ -24,6 +24,9 @@ class User(object):
         self.email = email
 
 
+# I used pymysql as connector/driver to mysql database
+# this require installation, I used pip install 'python3 -m pip install pymysql'
+# the database I connect to is on my machine, for testing purpose.
 
 import pymysql
 
@@ -56,6 +59,11 @@ def readFromDB(host='localhost', user='root', password='', db='test'):
 
     connection.close()
 
+# I was not able to implement more at this point since I do not have access to intercom APIs
+# I However User class has getters and setters which are helpful in calling the APIs.
+# The support of python/Intercom was not provided by Intercom; Third-party lib is needed.
+# python3 -m pip install python-intercom.
+# https://github.com/intercom/python-intercom
 
 def createUserAPI(user):
     print("=========================================")
