@@ -1,7 +1,7 @@
 from subprocess import *
 import time
 
-
+# note that find / is remove from the command list, it takes long time.
 commands = [
     'sleep 3',
     'ls -l /',
@@ -13,6 +13,8 @@ commands = [
     ]
 
 
+# I was not able to use the multithreading or creating subprocesses running at the
+#same time.
 def perform(process):
     b = Popen(process, shell=True)
     t1 = time.time()
@@ -20,6 +22,7 @@ def perform(process):
     t2 = time.time()
     return((t2-t1),process)
 
+# I used a loop to iterate through the commands list and execute every commands and store its time.
 def report(cmds = commands):
     
     result = []
